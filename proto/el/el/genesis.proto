@@ -1,0 +1,17 @@
+syntax = "proto3";
+package el.el;
+
+import "amino/amino.proto";
+import "gogoproto/gogo.proto";
+import "el/el/params.proto";
+
+option go_package = "el/x/el/types";
+
+// GenesisState defines the el module's genesis state.
+message GenesisState {
+  // params defines all the parameters of the module.
+  Params params = 1 [
+    (gogoproto.nullable) = false,
+    (amino.dont_omitempty) = true
+  ];
+}
